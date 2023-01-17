@@ -10,7 +10,7 @@ function onInputFocus() {
 };
 
 function onInputBlur() {
-  input.value.length < Number(input.dataset.length)
-    ? input.classList.add("invalid")
-    : input.classList.add("valid");
+  input.value.length === Number(input.dataset.length)
+    ? input.classList.add("valid")
+    : input.classList.add("invalid");
 };

@@ -1,14 +1,16 @@
 const refs = {
+  bodyEl: document.body,
   divWidget: document.querySelector(".widget"),
-  spanBackgroundColor: document.querySelector(".color"),
+  spanDivwidget: document.querySelector(".color"),
   buttonChangeColor: document.querySelector(".change-color"),
 };
 
 refs.buttonChangeColor.addEventListener("click", onButtonchangecolorClick);
 
 function onButtonchangecolorClick() {
-  refs.divWidget.style.backgroundColor = getRandomHexColor();
-  refs.spanBackgroundColor.textContent = getRandomHexColor();
+  refs.bodyEl.style.backgroundColor = getRandomHexColor();
+  refs.divWidget.style.backgroundColor = refs.bodyEl.style.backgroundColor;
+  refs.spanDivwidget.textContent = refs.divWidget.style.backgroundColor;
 }
 
 function getRandomHexColor() {
