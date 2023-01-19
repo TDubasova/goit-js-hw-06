@@ -4,7 +4,6 @@ input.addEventListener("focus", onInputFocus);
 input.addEventListener("blur", onInputBlur);
 
 function onInputFocus() {
-  input.value = "";
   input.classList.remove("invalid");
   input.classList.remove("valid");
 };

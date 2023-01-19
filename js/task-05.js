@@ -3,11 +3,12 @@ const refs = {
   span: document.querySelector("#name-output"),
 };
 
-refs.input.addEventListener("input", (event) => {
-  refs.span.textContent = event.currentTarget.value;
-});
+refs.input.addEventListener("input", onInputClick);
 
-refs.input.addEventListener("blur", () => {
-  refs.span.textContent = "Anonymous";
-  refs.input.value = '';
-});
+function onInputClick(event) {
+  refs.span.textContent = event.currentTarget.value;
+
+  if (event.currentTarget.value === "") {
+    refs.span.textContent = "Anonymous";
+  }
+}
